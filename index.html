@@ -4,131 +4,163 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My 3D Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <script defer src="script.js"></script>
     <style>
-        /* Cool Background */
+        /* Modern Background */
         body {
-            background: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
-            background-size: 400% 400%;
-            animation: gradientBG 10s ease infinite;
+            background: radial-gradient(circle at top, #1e1e2e, #121212);
             color: white;
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
         }
 
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        /* Header Styling */
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
         }
 
-        /* Neon Glow Effects */
-        h1, h2, h3 {
-            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ff00ff;
+            text-shadow: 0 0 5px #ff00ff;
         }
 
-        .submit-btn {
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 400;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff00ff;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 150px 20px;
+            text-align: center;
+        }
+
+        h1, h2 {
+            color: white;
+            text-shadow: 0 0 5px #ff00ff, 0 0 10px rgba(255, 0, 255, 0.5);
+        }
+
+        /* Button Styling */
+        .btn {
             background: #ff00ff;
-            border: none;
-            padding: 10px 20px;
-            font-size: 18px;
             color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
             cursor: pointer;
             transition: 0.3s;
-            box-shadow: 0 0 10px #ff00ff;
         }
 
-        .submit-btn:hover {
+        .btn:hover {
             background: #e600e6;
-            box-shadow: 0 0 20px #ff00ff;
         }
 
-        /* Smooth Scroll Effect */
-        html {
-            scroll-behavior: smooth;
+        /* Projects Section */
+        .project-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 20px;
         }
 
-        /* Hover Effects */
+        .project-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            transition: 0.3s;
+            width: 300px;
+        }
+
+        .project-item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
         .project-item:hover {
-            transform: scale(1.05);
-            transition: transform 0.3s;
+            transform: translateY(-5px);
         }
 
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1 class="logo">My 3D Portfolio</h1>
-            <nav>
-                <ul class="nav-list">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+        <div class="logo">MY 3D PORTFOLIO</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Home Section -->
+    <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="container">
-            <h2>Welcome to My Portfolio</h2>
-            <p>Hi, I'm MOHAMED, a passionate 3D Artist specializing in 3D modeling, rendering, and visual storytelling.</p>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>I have extensive experience in 3D modeling, texturing, and rendering using industry-standard software like Blender, Maya, and ZBrush.</p>
-        </div>
+        <h2>Welcome to My Portfolio</h2>
+        <p>Hi, I'm MOHAMED, a passionate 3D Artist specializing in 3D modeling, rendering, and visual storytelling.</p>
+        <button class="btn">About Me</button>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects-section">
-        <div class="container">
-            <h2>My Projects</h2>
-            <div class="project-gallery">
-                <div class="project-item">
-                    <img src="project1.jpg" alt="Project 1" class="project-image">
-                    <h3>Project 1</h3>
-                    <p>Realistic 3D model of a character.</p>
-                </div>
-                <div class="project-item">
-                    <img src="project2.jpg" alt="Project 2" class="project-image">
-                    <h3>Project 2</h3>
-                    <p>Stylized environment for gaming.</p>
-                </div>
-                <div class="project-item">
-                    <img src="project3.jpg" alt="Project 3" class="project-image">
-                    <h3>Project 3</h3>
-                    <p>High-detail product visualization.</p>
-                </div>
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="project-gallery">
+            <div class="project-item">
+                <img src="project1.jpg" alt="Project 1">
+                <h3>Project 1</h3>
+                <p>Realistic 3D model of a character.</p>
+            </div>
+            <div class="project-item">
+                <img src="project2.jpg" alt="Project 2">
+                <h3>Project 2</h3>
+                <p>Stylized environment for gaming.</p>
+            </div>
+            <div class="project-item">
+                <img src="project3.jpg" alt="Project 3">
+                <h3>Project 3</h3>
+                <p>High-detail product visualization.</p>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit" class="submit-btn">Send Message</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer Section -->
+    <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; 2025 MOHAMED. All rights reserved.</p>
-        </div>
+        <p>&copy; 2025 MOHAMED. All rights reserved.</p>
     </footer>
 </body>
 </html>
